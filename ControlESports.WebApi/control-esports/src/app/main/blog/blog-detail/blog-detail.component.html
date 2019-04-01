@@ -1,0 +1,99 @@
+
+<div class="container blog-detail">
+  <div class="row">
+
+    <div class="col-lg-8">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h1>Next Face Of Control League</h1>
+          <div class="pull-right">
+            <img src="{{BlogItem.BlogImage}}" alt="Blog-Image" class="img-responsive" width="150" height="150" />
+          </div>
+          <p class="lead">
+            by <a>{{BlogItem.CreatedBy}}</a>
+          </p>
+          <hr>
+
+          <p><span class="fa fa-clock-o"></span> Posted on {{BlogItem.CreatedDate}}</p>
+
+          <hr>
+
+          <ng-container *ngIf="BlogItem.HeaderImageURL !== ''">
+            <br /><br />
+            <img class="img-responsive" src="{{BlogItem.HeaderImageURL}}" alt="Header Image">
+            <hr>
+          </ng-container>
+
+
+          <p class="lead" [innerHTML]="BlogItem.Post | safeHtml" ></p>
+
+          <hr>
+
+          <ng-container *ngIf="BlogItem.FooterImageURL !== ''">
+            <img class="img-responsive" src="{{BlogItem.FooterImageURL}}" alt="Footer Image">
+            <hr>
+          </ng-container>
+
+          <p>
+            <a href="" class="btn btn-default">Return Home</a>
+          </p>
+        </div>
+      </div>
+
+
+      <div class="well" *ngIf="IsAuthenticated">
+        <h4>Leave a Comment:</h4>
+        <div class="form-group">
+
+          <textarea rows="3" class="form-control"></textarea>
+          <br />
+          <input type="text" class="form-control" placeholder="Posted By..." />
+          <br />
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+
+      <div class="well" *ngIf="!IsAuthenticated">
+        <h4>Please sign in to leave a comment.</h4>
+      </div>
+
+      <hr>
+
+      <div class="media" *ngFor="let item of Comments;let i = index">
+        <div class="pull-left">
+          <img class="media-object" src="~/Images/Blogs/Uploads/BlogComment.png" alt="">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">
+            {{item.PostedBy}}
+            <small>{{item.createdDate}}</small>
+          </h4>
+          {{item.Comment}}
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <div class="achievement-list">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h3>Achievements</h3>
+            <hr>
+            <p class="lead">Call of Duty</p>
+            <p class="text-muted">2014 - Cyber Gamer Champions</p>
+            <p class="text-muted">2014 - ACG Amateur Cup Champions</p>
+            <p class="lead">Counter-Strike</p>
+            <p class="text-muted">2015 - Virtual LAN Sydney First Place</p>
+            <p class="text-muted">2015 - Division 2 Cyber Gamer Champions</p>
+            <p class="text-muted">2015 - Faceit Oceanic League Champions</p>
+            <p class="text-muted">2015 - TTHub LAN Melbourne Second Place</p>
+            <p class="lead">Dota 2</p>
+            <p class="text-muted">2015 - Cyber Gamer Open League Champions</p>
+            <p class="lead">League of Legends</p>
+            <p class="text-muted">2014 - ACL Second Place</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

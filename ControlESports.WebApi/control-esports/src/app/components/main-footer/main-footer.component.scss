@@ -1,0 +1,41 @@
+.main-footer {
+  text-align: center;
+
+  ul.list-inline {
+    > li {
+      display: inline-block;
+    }
+  }
+
+  .SocialFacebook {
+    color: #3b5998;
+
+    &:hover {
+      color: #0094ff;
+    }
+  }
+
+  .SocialTwitch {
+    color: #b200ff;
+
+    &:hover {
+      color: #ff00dc;
+    }
+  }
+
+  .SocialYoutube {
+    color: #bb0000;
+
+    &:hover {
+      color: #fe0101;
+    }
+  }
+
+  .SocialTwitter {
+    color: #00aced;
+
+    &:hover {
+      color: #1dcaff;
+    }
+  }
+}

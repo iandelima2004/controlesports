@@ -1,0 +1,65 @@
+<div class="main-home">
+  <header id="top" class="header">
+    <div class="pulse_ring"></div>
+    <div class="NextSection"><font size="24"><a href="#News" id="NextSection"><span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span></a></font></div>
+  </header>
+
+  <section class="news-section">
+    <div>
+      <div class="jumbotron">
+        <h1>Latest News!</h1>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div *ngFor="let item of newsItemList" class="col-md-12">
+                <div class="panel panel-default BlogBox">
+                  <div class="panel-body panel-body-min-height">
+                    <div>
+                      <a href="/Blogs/BlogPost/8">
+                        <img src="https://i.imgur.com/uL0MNUv.png" alt="Rocket League" width="150" height="150">
+                      </a>
+                    </div>
+                    <h2>Drippay, Daisu &amp; Turtle making waves</h2>
+                    <div>
+                      <blockquote>Follow the lads as they prove to be a force in oceanic rocket league</blockquote>
+                    </div>
+                    <hr>
+                    <p>19/06/2016 - <a href="/Blogs/BlogPost/8">Read More</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="pull-right">
+                  <a href="/Blogs/AllBlogs" class="btn btn-primary btn-lg">All Blogs</a>
+                </div>
+                <br><br><br><br>
+              </div>
+            </div>
+          </div>
+          <!-- Sponsors and Search Box -->
+          <div class="col-md-3">
+            <div class="panel panel-default BlogBox">
+              <div class="panel-body">
+                <h3>Proudly Sponsored</h3>
+                <p class="text-muted">by...</p>
+                <hr>
+                <p class="lead">Tempest Industries</p>
+                <p class="text-muted"><a href="http://mitwc.com.au/">mitwc.com.au</a></p>
+                <hr>
+                <p class="lead">Gamer Apparel</p>
+                <p class="text-muted"><a href="http://gamersapparel.co.uk/">gamersapparel.co.uk</a></p>
+                <hr>
+                <p class="lead">PantheonES</p>
+                <p class="text-muted"><a href="http://pantheones.com.au/">pantheones.com.au</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

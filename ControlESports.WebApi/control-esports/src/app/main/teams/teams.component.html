@@ -1,0 +1,73 @@
+<div class="main-team container">
+  <div class="row">
+    <div class="col-xs-12">
+      <br><br>
+      <h1 class="Xperia">Choose a Team</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-9">
+      <ngb-accordion [closeOthers]="true" activeIds="static-1">
+        <ng-container *ngFor="let item of teamList;let i = index">
+          <ngb-panel id="{{i}}">
+            <ng-template ngbPanelTitle>
+              <a data-toggle="collapse" href="#9" aria-expanded="false" aria-controls="9" class="collapsed">
+                <img class="teamGameBanner" src="https://i.imgur.com/z5gGQf7.png" onmouseover="src='https://i.imgur.com/c2DLErg.png)'" onmouseout="src='https://i.imgur.com/z5gGQf7.png'" alt="Game Banner">
+              </a>
+            </ng-template>
+            <ng-template ngbPanelContent>
+              <div class="well">
+                <a routerLink="/main/teams/detail/1"><p class="lead">CS - Team 1</p></a>
+                <a routerLink="/main/teams/detail/1"><p class="lead">Control.volpriv</p></a>
+              </div>
+            </ng-template>
+          </ngb-panel>    
+        </ng-container>      
+      </ngb-accordion>
+    </div>
+    <!-- Blog Sidebar Widgets Column -->
+    <div class="col-md-3">
+      <div style="" id="AchievementsDiv">
+
+        <div class="card" style="width: 20rem;">
+          <div class="card-block">
+            <h4 class="card-title">Achievements</h4>
+            <hr />
+            <p class="lead">Call of Duty</p>
+            <p class="text-muted">2014 - Cyber Gamer Champions</p>
+            <p class="text-muted">2014 - ACG Amateur Cup Champions</p>
+            <p class="lead">Counter-Strike</p>
+            <p class="text-muted">2015 - Virtual LAN Sydney First Place</p>
+            <p class="text-muted">2015 - Division 2 Cyber Gamer Champions</p>
+            <p class="text-muted">2015 - Faceit Oceanic League Champions</p>
+            <p class="text-muted">2015 - TTHub LAN Melbourne Second Place</p>
+            <p class="lead">Dota 2</p>
+            <p class="text-muted">2015 - Cyber Gamer Open League Champions</p>
+            <p class="lead">League of Legends</p>
+            <p class="text-muted">2014 - ACL Second Place</p>
+          </div>
+        </div>
+
+        <!--<div class="panel panel-default">
+          <div class="panel-body">
+            <h3>Achievements</h3>
+            <hr>
+            <p class="lead">Call of Duty</p>
+            <p class="text-muted">2014 - Cyber Gamer Champions</p>
+            <p class="text-muted">2014 - ACG Amateur Cup Champions</p>
+            <p class="lead">Counter-Strike</p>
+            <p class="text-muted">2015 - Virtual LAN Sydney First Place</p>
+            <p class="text-muted">2015 - Division 2 Cyber Gamer Champions</p>
+            <p class="text-muted">2015 - Faceit Oceanic League Champions</p>
+            <p class="text-muted">2015 - TTHub LAN Melbourne Second Place</p>
+            <p class="lead">Dota 2</p>
+            <p class="text-muted">2015 - Cyber Gamer Open League Champions</p>
+            <p class="lead">League of Legends</p>
+            <p class="text-muted">2014 - ACL Second Place</p>
+          </div>
+        </div>
+      </div>-->
+
+    </div>
+  </div>
+</div>

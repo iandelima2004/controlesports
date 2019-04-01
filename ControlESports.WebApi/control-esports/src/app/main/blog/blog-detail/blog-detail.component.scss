@@ -1,0 +1,14 @@
+.blog-detail {
+  margin-top: 30px;
+
+  div.achievement-list {
+    > div.panel {
+      border: 1px solid #ddd;
+      padding: 15px;
+
+      p.lead{
+        font-weight:400;
+      }
+    }
+  }
+}

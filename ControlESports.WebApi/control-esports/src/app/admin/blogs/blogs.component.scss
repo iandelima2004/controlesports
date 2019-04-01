@@ -1,0 +1,11 @@
+@import '../../../sass/common';
+
+.admin-blog-list {
+  table.table {
+    tr > th.action {
+      @include breakpoint(lg) {
+        width: 230px;
+      }
+    }
+  }
+}

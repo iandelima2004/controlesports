@@ -1,0 +1,75 @@
+<div class="row admin-game-edit">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <strong>Game Detail</strong>
+      </div>
+      <div class="card-body">
+        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Game Logo</label>
+            <div class="col-md-9">
+              <img class="logo" src="assets/images/ControleSports.png" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Banner Image</label>
+            <div class="col-md-9">
+              <img class="header-logo" src="assets/images/Counter-Strike Global Offensive-BannerG.jpg" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Banner Hover Image</label>
+            <div class="col-md-9">
+              <img class="header-logo" src="assets/images/Counter-Strike Global Offensive-BannerH.jpg" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">TimeLine Logo</label>
+            <div class="col-md-9">
+              <img class="logo" src="assets/images/Counter-Strike Global Offensive-Timeline.jpg" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Game Title</label>
+            <div class="col-md-9">
+              <p class="form-control-static">{{gameDetail.Game}}</p>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Game Title</label>
+              <div class="col-md-9">
+                <input type="text" id="display-name-input" [ngModel]="gameDetail.Name" name="display-name-input" class="form-control">
+              </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="name-input">Is Active</label>
+            <div class="col-md-9">
+              <label class="switch switch-label switch-pill switch-success">
+                <input type="checkbox"  class="switch-input" [ngModel]="gameDetail.IsActive" checked>
+                <span class="switch-slider" data-checked="&#x2713;" data-unchecked="&#x2715;"></span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="display-name-input">Created By</label>
+            <div class="col-md-9">
+              <input type="text" id="display-name-input" [ngModel]="gameDetail.CreatedBy" name="display-name-input" class="form-control" disabled >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="created-date">Created Date</label>
+            <div class="col-md-9">
+              <input type="text" id="created-date" [ngModel]="gameDetail.CreatedDate" name="created-date" class="form-control" placeholder="Disabled" disabled >
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-sm btn-primary"><i class="fa fa-save"></i> Save</button>
+      </div>
+    </div>
+  </div>
+</div>

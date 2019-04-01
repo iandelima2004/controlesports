@@ -1,0 +1,60 @@
+
+<div class="margin-top-20"></div>
+<div class="team-detail container">
+  <div class="row">
+    <div class="col-xs-12">
+      <br /><br />
+      <h1 class="Xperia">Meet the Players</h1>
+      <a routerLink="/main/teams" class="btn btn-secondary">Back to Teams</a>   
+    </div> 
+  </div>
+  <br />
+  <ng-container *ngFor="let item of teamDetailList;let i = index">
+    <div class="profile-box col-md-11">
+      <div class="row">
+        <div class="col-md-3 col-md-offset-1 text-center">
+          <div style="text-align: center;">
+            <img *ngIf="(item.displayPicture === null)" class="img-circle img-responsive" src="../../../../assets/images/ControleSports.png" height="150" width="150" alt="Player Image" />
+            <img *ngIf="(item.displayPicture != null)" class="img-circle img-responsive" src="@player.DisplayPicture" height="150" width="150" alt="@player.Name image" />
+          </div>
+          <div *ngIf="item.teamLeader" class="team-role-label team-role-label-lead">Team Leader</div>
+          <div *ngIf="item.orgAdmin" class="team-role-label team-role-label-orgAdmin">Org Admin</div>
+          <div *ngIf="!item.substitute" class="team-role-label team-role-label-core">Core</div>
+          <div *ngIf="item.substitute" class="team-role-label team-role-label-sub">Substitute</div>
+        </div>
+        <div class="col-md-7 col-md-offset-1">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h1 class="Xperia">{{item.name}}</h1>
+              <hr />
+            </div>
+          </div>
+          <div class="row param-row">
+            <div class="col-md-4">
+              <strong>Computer: </strong>
+            </div>
+            <div class="col-md-8">
+              {{item.pCBuild}}
+            </div>
+          </div>
+          <div class="row param-row">
+            <div class="col-md-4">
+              <strong>Crosshair Settings: </strong>
+            </div>
+            <div class="col-md-8">
+              {{item.crosshair}}
+            </div>
+          </div>
+          <div class="row param-row">
+            <div class="col-md-4">
+              <strong>Favourite Map: </strong>
+            </div>
+            <div class="col-md-8">
+              {{item.favMap}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

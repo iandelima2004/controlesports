@@ -1,0 +1,68 @@
+<div class="row admin-blog-create">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <strong>Create Blog</strong>
+      </div>
+      <div class="card-body">
+        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="title-input">Title</label>
+            <div class="col-md-9">
+              <input type="text" id="title-input" [ngModel]="blogItem.Title" name="title-input" class="form-control" >
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="description-input">Description</label>
+            <div class="col-md-9">
+              <input type="text" id="description-input" [ngModel]="blogItem.Description" name="description-input" class="form-control" >
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="select1">Game</label>
+            <div class="col-md-9">
+              <select id="select1" name="select1" class="form-control">
+                <option value="0">Please select</option>
+                <option value="1" selected>Counter Strike</option>
+                <option value="2">Call of Duty</option>
+                <option value="3">Dota 2</option>
+                <option value="4">League of Legends</option>
+                <option value="5">Starcraft 2</option>
+                <option value="5">Rocket League</option>
+                <option value="5">Rainbow Six Siege</option>
+                <option value="5">H1Z1</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Header Image</label>
+            <div class="col-md-9">
+              <input type="file" name="file-input">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Footer Image</label>
+            <div class="col-md-9">
+              <input type="file" name="file-input">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="roles-input">Post</label>
+            <div class="col-md-9">
+              <quill-editor [(ngModel)]="blogItem.Post" [readOnly]="true" [style]="{height: '200px'}" [ngModelOptions]="{standalone: true}"></quill-editor>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-sm btn-primary" ><i class="fa fa-dot-circle-o"></i> Edit</button>
+      </div>
+    </div>
+  </div>
+</div>

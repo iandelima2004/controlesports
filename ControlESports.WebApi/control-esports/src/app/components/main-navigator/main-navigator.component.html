@@ -1,0 +1,47 @@
+<nav class="main-nav navbar navbar-expand-lg navbar-light bg-dark">
+  <a class="navbar-brand" routerLink="/"><span class="navbarBrandColor">Control</span> <font color="white">e-Sports</font></a>
+  <button class="navbar-toggler btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarTogglerDemo02">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02" [ngbCollapse]="isCollapsed">
+
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/main">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/main/teams">Team</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/main/matches/timeline">Matches</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" routerLink="/main/blogs">Blogs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" routerLink="/admin">Admin</a>
+      </li>
+    </ul>
+
+    <div class="nav navbar-nav navbar-right">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle><i class="fa fa-user fa-fw"></i></button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="dropdown-item"><i class="fa fa-wrench"></i> Admin Page</button>
+          <button class="dropdown-item"><i class="fa fa-user fa-fw"></i> User Profile</button>
+          <button class="dropdown-item"><i class="fa fa-sign-out fa-fw"></i> Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/main/account/register">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/main/account/login">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>

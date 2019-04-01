@@ -1,0 +1,133 @@
+<div class="row admin-blog-detail">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <strong>Blog Detail</strong>
+      </div>
+      <div class="card-body">
+        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="title-input">Title</label>
+            <div class="col-md-9">
+              <input type="text" id="title-input" [ngModel]="blogItem.Title" name="title-input" class="form-control" disabled>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="description-input">Description</label>
+            <div class="col-md-9">
+              <input type="text" id="description-input" [ngModel]="blogItem.Description" name="description-input" class="form-control" disabled>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="created-input">Created By</label>
+            <div class="col-md-9">
+              <input type="text" id="created-input" [ngModel]="blogItem.CreatedBy" name="created-input" class="form-control" disabled>
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="created-input">Game Id</label>
+            <div class="col-md-9">
+              <input type="text" id="created-input" [ngModel]="blogItem.GameId" name="created-input" class="form-control" disabled>
+            </div>
+          </div>
+
+          <!--<div class="form-group row">
+            <label class="col-md-3 col-form-label" for="select1">Select</label>
+            <div class="col-md-9">
+              <select id="select1" name="select1" class="form-control">
+                <option value="0">Please select</option>
+                <option value="1" selected>Counter Strike</option>
+                <option value="2">Call of Duty</option>
+                <option value="3">Dota 2</option>
+                <option value="4">League of Legends</option>
+                <option value="5">Starcraft 2</option>
+                <option value="5">Rocket League</option>
+                <option value="5">Rainbow Six Siege</option>
+                <option value="5">H1Z1</option>
+              </select>
+            </div>
+          </div>-->
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Header Image</label>
+            <div class="col-md-9">
+              <img class="header-footer-img" src="assets/images/ControleSports.png" />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Footer Image</label>
+            <div class="col-md-9">
+              <img class="header-footer-img" src="assets/images/ControleSports.png" />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="roles-input">Post</label>
+            <div class="col-md-9">
+              <quill-editor [(ngModel)]="blogItem.Post" [readOnly]="true" [style]="{height: '200px'}" [ngModelOptions]="{standalone: true}"></quill-editor>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-sm btn-primary" (click)="editDetails(blogItem.Id)"><i class="fa fa-dot-circle-o"></i> Edit</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <strong>User Comments</strong>
+      </div>
+      <div class="card-body">
+        <table class="table table-responsive-sm table-hover table-outline mb-0">
+          <thead class="thead-light">
+            <tr>
+              <th class="text-center"><i class="icon-people"></i></th>
+              <th>User</th>
+              <th class="text-center">Country</th>
+              <th>Comments</th>
+              <th>Commented Date</th>
+              <th>Last Activity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let comment of blogItem.CommentItems">
+              <td class="text-center">
+                <div class="avatar">
+                  <img src="assets/images/ControleSports.png" class="img-avatar">
+                  <span class="avatar-status badge-success"></span>
+                </div>
+              </td>
+              <td>
+                <div>{{comment.UserName}}</div>
+                <div class="small text-muted">
+                  <span>New</span> | Registered: Jan 1, 2015
+                </div>
+              </td>
+              <td>
+                <i class="flag-icon {{comment.Flag}} h4 mb-0" title="us" id="us"></i>
+              </td>
+              <td>
+                {{comment.Comment}}
+              </td>
+              <td>
+                {{comment.CreatedDate}}
+              </td>
+              <td>
+                <div class="small text-muted">Last login</div>
+                <strong>10 sec ago</strong>
+              </td>
+            </tr>        
+          </tbody>
+        </table>
+      </div>    
+    </div>
+
+  </div>
+</div>

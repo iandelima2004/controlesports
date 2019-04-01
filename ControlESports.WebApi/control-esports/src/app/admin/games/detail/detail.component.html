@@ -1,0 +1,173 @@
+<div class="row admin-game-detail">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <strong>Game Detail</strong>
+      </div>
+      <div class="card-body">
+        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Game Logo</label>
+            <div class="col-md-9">
+              <img class="logo" src="assets/images/ControleSports.png" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Banner Image</label>
+            <div class="col-md-9">
+              <img class="header-logo" src="assets/images/Counter-Strike Global Offensive-BannerG.jpg" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Banner Hover Image</label>
+            <div class="col-md-9">
+              <img class="header-logo" src="assets/images/Counter-Strike Global Offensive-BannerH.jpg" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">TimeLine Logo</label>
+            <div class="col-md-9">
+              <img class="logo" src="assets/images/Counter-Strike Global Offensive-Timeline.jpg" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Game Title</label>
+            <div class="col-md-9">
+              <p class="form-control-static">{{gameDetail.Game}}</p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="name-input">Is Active</label>
+            <div class="col-md-9"> 
+              <label class="switch switch-label switch-pill switch-success">
+                <input type="checkbox" disabled class="switch-input" [ngModel]="gameDetail.IsActive" checked>
+                <span class="switch-slider" data-checked="&#x2713;" data-unchecked="&#x2715;"></span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="display-name-input">Created By</label>
+            <div class="col-md-9">
+              <input type="text" id="display-name-input" [ngModel]="gameDetail.CreatedBy" name="display-name-input" class="form-control" disabled>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="created-date">Created Date</label>
+            <div class="col-md-9">
+              <input type="text" id="created-date" [ngModel]="gameDetail.CreatedDate" name="created-date" class="form-control" placeholder="Disabled" disabled>
+            </div>
+          </div>
+      
+        </form>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-sm btn-primary" (click)="editDetails(gameDetail.Id)"><i class="fa fa-dot-circle-o"></i> Edit</button>
+      </div>
+    </div>
+
+  
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> Associated Teams
+        
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <button class="col-md-2 m-2 btn btn-pill btn-block btn-primary" (click)="navigate('/admin/teams/create')">Create New Team</button>
+            </div>  <br />
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Logo</th>
+                  <th>Name</th>
+                  <th>Game</th>
+                  <th>Member Count</th>
+                  <th>Total Matches</th>
+                  <th>IsActive</th>
+                  <th>Created Date</th>
+                  <th class="action">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let team of teamList">
+                  <td>
+                    <div class="avatar">
+                      <img src="assets/images/ControleSports.png" class="img-avatar">
+                      <span class="avatar-status badge-success"></span>
+                    </div>
+                  </td>                 
+                  <td>{{team.Name}}</td>
+                  <td>{{team.Game}}</td>
+                  <td>{{team.MemberCount}}</td>
+                  <td>{{team.TotamMatches}}</td>
+                  <td>
+                    <label class="switch switch-label switch-pill switch-success">
+                      <input type="checkbox" disabled class="switch-input" [ngModel]="team.IsActive" checked>
+                      <span class="switch-slider" data-checked="&#x2713;" data-unchecked="&#x2715;"></span>
+                    </label>
+                  </td>
+                  <td>{{team.CreatedDate}}</td>
+                  <td class="row">
+                    <span class="col-md-4 p-2"><button class="btn btn-pill btn-block btn-primary" (click)="navigate('admin/teams/detail/5af7eedb8d0b5a51556c35c8')" type="button">View</button></span>
+                    <span class="col-md-4 p-2"><button class="btn btn-pill btn-block btn-warning" (click)="navigate('admin/teams/edit/5af7eedb8d0b5a51556c35c8')" type="button">Edit</button></span>
+                    <span class="col-md-4 p-2"><button class="btn btn-pill btn-block btn-danger" (click)="dangerModal.show()" type="button">Delete</button></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link">2</a></li>
+              <li class="page-item"><a class="page-link">3</a></li>
+              <li class="page-item"><a class="page-link">4</a></li>
+              <li class="page-item"><a class="page-link">Next</a></li>
+            </ul>
+          </div>
+        </div>
+
+
+    <div class="card">
+      <div class="card-header">
+        <i class="fa fa-align-justify"></i> Game Related Blogs
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <button class="col-md-2 m-2 btn btn-pill btn-block btn-primary" (click)="navigate('/admin/blogs/create')">Create New Blog</button>
+        </div>  <br />
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Blog Name</th>
+              <th>Created Date</th>
+              <th>Total Comments</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let blog of gameDetail.BlogItems">
+              <td>{{blog.BlogName}}</td>
+              <td>{{blog.CreatedDate}}</td>
+              <td>{{blog.TotalComments}}</td>
+              <td class="row">
+                <span class="col-md-12 p-2"><button class="btn btn-pill btn-block btn-primary" type="button" (click)="navigate('admin/blogs/detail/5af7eedb8d0b5a51556c35c8')">View</button></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+          <li class="page-item active">
+            <a class="page-link" href="#">1</a>
+          </li>
+          <li class="page-item"><a class="page-link">2</a></li>
+          <li class="page-item"><a class="page-link">3</a></li>
+          <li class="page-item"><a class="page-link">4</a></li>
+          <li class="page-item"><a class="page-link">Next</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

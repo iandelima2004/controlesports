@@ -1,0 +1,62 @@
+<div class="row admin-player-edit">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <strong>Player Detail</strong>
+      </div>
+      <div class="card-body">
+        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Profile Picture</label>
+            <div class="col-md-9">
+              <img class="profile-pic" src="assets/images/ControleSports.png" /><input type="file" id="file-input" name="file-input">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Name</label>
+            <div class="col-md-9">
+              <p class="form-control-static">{{playerDetail.Name}}</p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="name-input">Country</label>
+            <div class="col-md-9">
+              <i class="flag-icon {{playerDetail.Flag}} h4 mb-0" title="us" id="us"></i>
+                <select id="select1" name="select1" class="form-control">
+                  <option value="0">Please select</option>
+                  <option value="1" selected>Australia</option>
+                  <option value="2">United States</option>
+                  <option value="3">New Zealand</option>
+                  <option value="4">Poland</option>
+                  <option value="5">Korea</option>
+                  <option value="5">China</option>
+                  <option value="5">Philippines</option>
+                  <option value="5">Hong Kong</option>
+                </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="display-name-input">Team</label>
+            <div class="col-md-9">
+              <select id="select1" name="select1" class="form-control">
+                <option value="0">Please select</option>
+                <option value="1" selected>CS-Team 1</option>
+                <option value="2">CS-Team 2</option>
+                <option value="3">CS-Team 3</option>
+                <option value="4">LOL-Team 1</option>
+                <option value="5">LOL-Team 2</option>
+                <option value="5">LOL-Team 3</option>
+                <option value="5">RL-Team 1</option>
+                <option value="5">RL-Team 2</option>
+              </select>
+            </div>
+          </div>        
+        </form>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-sm btn-primary" ><i class="fa fa-dot-circle-o"></i> Edit</button>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,695 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E3B5432E-C3BD-4891-9F1F-7D9D5B551ADF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ControlESports.WebApi</RootNamespace>
+    <AssemblyName>ControlESports.WebApi</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.2</TypeScriptToolsVersion>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.4.3.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.4.3\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.WebApi, Version=4.4.3.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Integration.WebApi.4.4.3\lib\net45\SimpleInjector.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SimpleInjectorConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\TeamController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="control-esports\dist\1024.83d9c0bdd407993384d7.png" />
+    <Content Include="control-esports\dist\1920.8f0ffee3b0520d442cde.png" />
+    <Content Include="control-esports\dist\2560.eb28c88157145511f591.png" />
+    <Content Include="control-esports\dist\3rdpartylicenses.txt" />
+    <Content Include="control-esports\dist\768.6fb3bb954310c174628c.png" />
+    <Content Include="control-esports\dist\ad.313cc919c665805590b8.svg" />
+    <Content Include="control-esports\dist\ad.ead7604352750854830d.svg" />
+    <Content Include="control-esports\dist\af.68d6fe6fbb8d26245577.svg" />
+    <Content Include="control-esports\dist\af.da6dc167c9127f158374.svg" />
+    <Content Include="control-esports\dist\ai.867c186790e2d74a2efb.svg" />
+    <Content Include="control-esports\dist\ai.ee6ee9bc23bb863b0d73.svg" />
+    <Content Include="control-esports\dist\as.4c21826658a383cc144a.svg" />
+    <Content Include="control-esports\dist\as.f383cf21ee5ac80f64d4.svg" />
+    <Content Include="control-esports\dist\assets\font\themify.svg" />
+    <Content Include="control-esports\dist\assets\images\1024.png" />
+    <Content Include="control-esports\dist\assets\images\1920.png" />
+    <Content Include="control-esports\dist\assets\images\2560.png" />
+    <Content Include="control-esports\dist\assets\images\768.png" />
+    <Content Include="control-esports\dist\assets\images\blogs\icon\codBlog.png" />
+    <Content Include="control-esports\dist\assets\images\blogs\icon\csBlog.png" />
+    <Content Include="control-esports\dist\assets\images\blogs\icon\dota2Blog.JPG" />
+    <Content Include="control-esports\dist\assets\images\blogs\icon\lolBlog.png" />
+    <Content Include="control-esports\dist\assets\images\blogs\icon\sc2Blog.png" />
+    <Content Include="control-esports\dist\assets\images\blogs\uploads\BlogComment.png" />
+    <Content Include="control-esports\dist\assets\images\ControleSports.png" />
+    <Content Include="control-esports\dist\assets\images\Counter-Strike Global Offensive-BannerG.jpg" />
+    <Content Include="control-esports\dist\assets\images\Counter-Strike Global Offensive-BannerH.jpg" />
+    <Content Include="control-esports\dist\assets\images\Counter-Strike Global Offensive-Timeline.jpg" />
+    <Content Include="control-esports\dist\aw.470237051b8678699cd4.svg" />
+    <Content Include="control-esports\dist\aw.f631ae0a06ec235884e1.svg" />
+    <Content Include="control-esports\dist\bm.3c3a4bb2d510ff5ccecb.svg" />
+    <Content Include="control-esports\dist\bm.62e57b0da090af0c9f39.svg" />
+    <Content Include="control-esports\dist\bn.8f92a2a68334a67d2cfb.svg" />
+    <Content Include="control-esports\dist\bn.fbe8d8b29b5d9d1e3b2a.svg" />
+    <Content Include="control-esports\dist\bo.6fb296d5ddde2f98ed23.svg" />
+    <Content Include="control-esports\dist\bo.b867573646ad241e0e82.svg" />
+    <Content Include="control-esports\dist\br.1a59cea1ca6c94fb6c00.svg" />
+    <Content Include="control-esports\dist\br.78de6acf30cc7fa47002.svg" />
+    <Content Include="control-esports\dist\bt.a8c715fb69e0e7a4871f.svg" />
+    <Content Include="control-esports\dist\bt.ba78c82bac7649a0c63c.svg" />
+    <Content Include="control-esports\dist\bz.43b35557c843e5b5b411.svg" />
+    <Content Include="control-esports\dist\bz.54bf457314ccf5c2a7a4.svg" />
+    <Content Include="control-esports\dist\CoreUI-Icons-Linear.5a0baead5705a97734a2.svg" />
+    <Content Include="control-esports\dist\dm.0c25d1c964ee725ee3fb.svg" />
+    <Content Include="control-esports\dist\dm.26eebc61eaf81cade452.svg" />
+    <Content Include="control-esports\dist\do.46ecd3f1009dc727f806.svg" />
+    <Content Include="control-esports\dist\do.b458ed8d22464a6c8ffa.svg" />
+    <Content Include="control-esports\dist\ec.0ccc7990711012699754.svg" />
+    <Content Include="control-esports\dist\ec.a5936cd548051de7f86c.svg" />
+    <Content Include="control-esports\dist\eg.6b3ede5793ddf47b6316.svg" />
+    <Content Include="control-esports\dist\eg.855377c17e85edfbbcce.svg" />
+    <Content Include="control-esports\dist\es.2d0caa1aed39c950dcf3.svg" />
+    <Content Include="control-esports\dist\es.8020fcd82cc09410f7ba.svg" />
+    <Content Include="control-esports\dist\favicon.ico" />
+    <Content Include="control-esports\dist\fj.06a2a0a58e44dcc78ef3.svg" />
+    <Content Include="control-esports\dist\fj.145f6e915d7155aabde5.svg" />
+    <Content Include="control-esports\dist\fk.0346c5086de1ccb53a45.svg" />
+    <Content Include="control-esports\dist\fk.9afe00c857c5319cad44.svg" />
+    <Content Include="control-esports\dist\fontawesome-webfont.912ec66d7572ff821749.svg" />
+    <Content Include="control-esports\dist\gb-nir.bca162fd093b9fd677bd.svg" />
+    <Content Include="control-esports\dist\gb-nir.fe3541260952ff0b2468.svg" />
+    <Content Include="control-esports\dist\gb-wls.bcc948923469b70a294a.svg" />
+    <Content Include="control-esports\dist\gb-wls.c62bd08127e9b768f698.svg" />
+    <Content Include="control-esports\dist\gs.57397584b2f61aaac0f9.svg" />
+    <Content Include="control-esports\dist\gs.ffdcf7e8d78e8419706f.svg" />
+    <Content Include="control-esports\dist\gt.4632809044fa0209427b.svg" />
+    <Content Include="control-esports\dist\gt.b484cf21cb05fdd295ba.svg" />
+    <Content Include="control-esports\dist\hr.563d3c098909c8a7a82d.svg" />
+    <Content Include="control-esports\dist\hr.dc70492e6d0c940aa8c8.svg" />
+    <Content Include="control-esports\dist\ht.439ff5b2b8fdf93f21b3.svg" />
+    <Content Include="control-esports\dist\ht.bf2699c766f54a3528b7.svg" />
+    <Content Include="control-esports\dist\im.063e4f27d4b9ebfe35ab.svg" />
+    <Content Include="control-esports\dist\im.f359e4af84de97a367e8.svg" />
+    <Content Include="control-esports\dist\index.html" />
+    <Content Include="control-esports\dist\inline.318b50c57b4eba3d437b.bundle.js" />
+    <Content Include="control-esports\dist\io.60c160193f00355e5048.svg" />
+    <Content Include="control-esports\dist\io.c3a9a34773e5569364ad.svg" />
+    <Content Include="control-esports\dist\ir.58c78eab9893258a3eec.svg" />
+    <Content Include="control-esports\dist\ir.5e7a66fb0660b714f1a4.svg" />
+    <Content Include="control-esports\dist\kh.9e206ef9fe85c4a790f8.svg" />
+    <Content Include="control-esports\dist\kh.f7fb085f68d9a1577ebc.svg" />
+    <Content Include="control-esports\dist\ky.bea1dbdd7aeb69fa91f6.svg" />
+    <Content Include="control-esports\dist\ky.f5d9d8099bfa0afa1bfd.svg" />
+    <Content Include="control-esports\dist\kz.0e744e4eb3a9efbb061a.svg" />
+    <Content Include="control-esports\dist\kz.63392ec44b380a66d0a2.svg" />
+    <Content Include="control-esports\dist\li.5c6e91bd4340ba0cf51e.svg" />
+    <Content Include="control-esports\dist\li.963c7aa5c1065663ac2a.svg" />
+    <Content Include="control-esports\dist\lk.9822728dbbd634e839cf.svg" />
+    <Content Include="control-esports\dist\lk.f4106211fb7b6945992a.svg" />
+    <Content Include="control-esports\dist\main.e7f5dab6c2b154d8f46b.bundle.js" />
+    <Content Include="control-esports\dist\md.63f49a6086369c674c45.svg" />
+    <Content Include="control-esports\dist\md.bba429bfd66b68572749.svg" />
+    <Content Include="control-esports\dist\me.0456e73c5126fc222cbb.svg" />
+    <Content Include="control-esports\dist\me.dadc0f0c71a322e3a86d.svg" />
+    <Content Include="control-esports\dist\mp.9f377cb996052eee3e51.svg" />
+    <Content Include="control-esports\dist\mp.bc3b5c5f5f13fa0f533f.svg" />
+    <Content Include="control-esports\dist\mt.326058406d58b7bff47f.svg" />
+    <Content Include="control-esports\dist\mt.d6eccaefeabe5a23ea03.svg" />
+    <Content Include="control-esports\dist\mx.2101146e7a1d0058002b.svg" />
+    <Content Include="control-esports\dist\mx.98615f7ff2fd0a45e20a.svg" />
+    <Content Include="control-esports\dist\ni.5006277c81e04188e12e.svg" />
+    <Content Include="control-esports\dist\ni.5830a76a5a18a4213e01.svg" />
+    <Content Include="control-esports\dist\om.2ebf43af103747c3fe80.svg" />
+    <Content Include="control-esports\dist\om.f7223881f778b5cf0699.svg" />
+    <Content Include="control-esports\dist\pe.ee097e5092024ddecf50.svg" />
+    <Content Include="control-esports\dist\pe.f0816c3791b8a179e60e.svg" />
+    <Content Include="control-esports\dist\pn.011983ac981416a246e1.svg" />
+    <Content Include="control-esports\dist\pn.e56155c19e2ef1686be7.svg" />
+    <Content Include="control-esports\dist\polyfills.62ff759e7517db1c0938.bundle.js" />
+    <Content Include="control-esports\dist\pt.3c410042f938c619c2a9.svg" />
+    <Content Include="control-esports\dist\pt.492042709de1d5a439aa.svg" />
+    <Content Include="control-esports\dist\py.9303013528a69bc83087.svg" />
+    <Content Include="control-esports\dist\py.b79561133db5b7e34df7.svg" />
+    <Content Include="control-esports\dist\rs.4eaf546a6aa3a57426ca.svg" />
+    <Content Include="control-esports\dist\rs.9926aca85269f2fb4adf.svg" />
+    <Content Include="control-esports\dist\sa.6cc2f890489cf9d91aaf.svg" />
+    <Content Include="control-esports\dist\sa.d2578130afbcef1f2b9f.svg" />
+    <Content Include="control-esports\dist\sh.2c0e7a98cc7a08a3d05b.svg" />
+    <Content Include="control-esports\dist\sh.db2ed663a84b5352efe9.svg" />
+    <Content Include="control-esports\dist\Simple-Line-Icons.2fe2efe63441d830b1ac.svg" />
+    <Content Include="control-esports\dist\sm.6b9322fe38345236c244.svg" />
+    <Content Include="control-esports\dist\sm.c1143f65d5a699bc3a2c.svg" />
+    <Content Include="control-esports\dist\styles.6a76620d720d8f299f4c.bundle.css" />
+    <Content Include="control-esports\dist\sv.3079f878814feec05959.svg" />
+    <Content Include="control-esports\dist\sv.d634f9a62464280ad55f.svg" />
+    <Content Include="control-esports\dist\sx.1fc55ded843b07c6a120.svg" />
+    <Content Include="control-esports\dist\sx.cb86d088b9f7f56bc59e.svg" />
+    <Content Include="control-esports\dist\tc.8f88612b4aece8d809cd.svg" />
+    <Content Include="control-esports\dist\tc.d8595b0311b0908b6e88.svg" />
+    <Content Include="control-esports\dist\tm.8e52383f0c611e135b73.svg" />
+    <Content Include="control-esports\dist\tm.ebbd1999c6b153ee4fc2.svg" />
+    <Content Include="control-esports\dist\un.055d2421a497f11c838b.svg" />
+    <Content Include="control-esports\dist\un.cd3d61b637da2319e2f1.svg" />
+    <Content Include="control-esports\dist\va.6542983178f95bd9b95c.svg" />
+    <Content Include="control-esports\dist\va.ccbda5d3825e050f97bd.svg" />
+    <Content Include="control-esports\dist\vg.0c6aa7d2f5b21f353be3.svg" />
+    <Content Include="control-esports\dist\vg.42724b9781dece199ef7.svg" />
+    <Content Include="control-esports\dist\vi.77f0687e785991234457.svg" />
+    <Content Include="control-esports\dist\vi.7f8aaadbad1ef31f37e2.svg" />
+    <Content Include="control-esports\dist\zw.0db27ac5ee6250bc53eb.svg" />
+    <Content Include="control-esports\dist\zw.363a3e2a9c323bf3030b.svg" />
+    <Content Include="control-esports\karma.conf.js" />
+    <Content Include="control-esports\protractor.conf.js" />
+    <Content Include="control-esports\src\app\admin\achievements\achievements.component.html" />
+    <Content Include="control-esports\src\app\admin\achievements\create\create.component.html" />
+    <Content Include="control-esports\src\app\admin\achievements\detail\detail.component.html" />
+    <Content Include="control-esports\src\app\admin\achievements\edit\edit.component.html" />
+    <Content Include="control-esports\src\app\admin\admin.component.html" />
+    <Content Include="control-esports\src\app\admin\blogs\blogs.component.html" />
+    <Content Include="control-esports\src\app\admin\blogs\create\create.component.html" />
+    <Content Include="control-esports\src\app\admin\blogs\detail\detail.component.html" />
+    <Content Include="control-esports\src\app\admin\blogs\edit\edit.component.html" />
+    <Content Include="control-esports\src\app\admin\dashboard\dashboard.component.html" />
+    <Content Include="control-esports\src\app\admin\games\create\create.component.html" />
+    <Content Include="control-esports\src\app\admin\games\detail\detail.component.html" />
+    <Content Include="control-esports\src\app\admin\games\edit\edit.component.html" />
+    <Content Include="control-esports\src\app\admin\games\games.component.html" />
+    <Content Include="control-esports\src\app\admin\matches\matches.component.html" />
+    <Content Include="control-esports\src\app\admin\players\create\create.component.html" />
+    <Content Include="control-esports\src\app\admin\players\detail\detail.component.html" />
+    <Content Include="control-esports\src\app\admin\players\edit\edit.component.html" />
+    <Content Include="control-esports\src\app\admin\players\players.component.html" />
+    <Content Include="control-esports\src\app\admin\settings\settings.component.html" />
+    <Content Include="control-esports\src\app\admin\teams\create\create.component.html" />
+    <Content Include="control-esports\src\app\admin\teams\detail\detail.component.html" />
+    <Content Include="control-esports\src\app\admin\teams\edit\edit.component.html" />
+    <Content Include="control-esports\src\app\admin\teams\teams.component.html" />
+    <Content Include="control-esports\src\app\admin\tournaments\tournaments.component.html" />
+    <Content Include="control-esports\src\app\admin\users\create\create.component.html" />
+    <Content Include="control-esports\src\app\admin\users\detail\detail.component.html" />
+    <Content Include="control-esports\src\app\admin\users\edit\edit.component.html" />
+    <Content Include="control-esports\src\app\admin\users\users.component.html" />
+    <Content Include="control-esports\src\app\app.component.html" />
+    <Content Include="control-esports\src\app\components\main-footer\main-footer.component.html" />
+    <Content Include="control-esports\src\app\components\main-navigator\main-navigator.component.html" />
+    <Content Include="control-esports\src\app\main\account\account.component.html" />
+    <Content Include="control-esports\src\app\main\account\changepassword\changepassword.component.html" />
+    <Content Include="control-esports\src\app\main\account\forgotpassword\forgotpassword.component.html" />
+    <Content Include="control-esports\src\app\main\account\register\register.component.html" />
+    <Content Include="control-esports\src\app\main\blog\blog-detail\blog-detail.component.html" />
+    <Content Include="control-esports\src\app\main\blog\blog.component.html" />
+    <Content Include="control-esports\src\app\main\home\home.component.html" />
+    <Content Include="control-esports\src\app\main\main.component.html" />
+    <Content Include="control-esports\src\app\main\matches\matches.component.html" />
+    <Content Include="control-esports\src\app\main\matches\timeline\timeline.component.html" />
+    <Content Include="control-esports\src\app\main\teams\team-detail\team-detail.component.html" />
+    <Content Include="control-esports\src\app\main\teams\teams.component.html" />
+    <Content Include="control-esports\src\assets\font\themify.svg" />
+    <Content Include="control-esports\src\assets\images\1024.png" />
+    <Content Include="control-esports\src\assets\images\1920.png" />
+    <Content Include="control-esports\src\assets\images\2560.png" />
+    <Content Include="control-esports\src\assets\images\768.png" />
+    <Content Include="control-esports\src\assets\images\blogs\icon\codBlog.png" />
+    <Content Include="control-esports\src\assets\images\blogs\icon\csBlog.png" />
+    <Content Include="control-esports\src\assets\images\blogs\icon\dota2Blog.JPG" />
+    <Content Include="control-esports\src\assets\images\blogs\icon\lolBlog.png" />
+    <Content Include="control-esports\src\assets\images\blogs\icon\sc2Blog.png" />
+    <Content Include="control-esports\src\assets\images\blogs\uploads\BlogComment.png" />
+    <Content Include="control-esports\src\assets\images\ControleSports.png" />
+    <Content Include="control-esports\src\assets\images\Counter-Strike Global Offensive-BannerG.jpg" />
+    <Content Include="control-esports\src\assets\images\Counter-Strike Global Offensive-BannerH.jpg" />
+    <Content Include="control-esports\src\assets\images\Counter-Strike Global Offensive-Timeline.jpg" />
+    <Content Include="control-esports\src\favicon.ico" />
+    <Content Include="control-esports\src\index.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="control-esports\.angular-cli.json" />
+    <Content Include="control-esports\.editorconfig" />
+    <Content Include="control-esports\.gitignore" />
+    <Content Include="control-esports\dist\assets\font\themify.eot" />
+    <Content Include="control-esports\dist\assets\font\themify.ttf" />
+    <Content Include="control-esports\dist\assets\font\themify.woff" />
+    <Content Include="control-esports\dist\assets\font\Xperia.ttf" />
+    <Content Include="control-esports\dist\CoreUI-Icons-Linear.2f3e65491542eb5a0001.eot" />
+    <Content Include="control-esports\dist\CoreUI-Icons-Linear.401a082edaf3bc67de00.ttf" />
+    <Content Include="control-esports\dist\CoreUI-Icons-Linear.ea13b16754fa05ba9649.woff" />
+    <Content Include="control-esports\dist\fontawesome-webfont.674f50d287a8c48dc19b.eot" />
+    <Content Include="control-esports\dist\fontawesome-webfont.af7ae505a9eed503f8b8.woff2" />
+    <Content Include="control-esports\dist\fontawesome-webfont.b06871f281fee6b241d6.ttf" />
+    <Content Include="control-esports\dist\fontawesome-webfont.fee66e712a8a08eef580.woff" />
+    <Content Include="control-esports\dist\Simple-Line-Icons.0cb0b9c589c0624c9c78.woff2" />
+    <Content Include="control-esports\dist\Simple-Line-Icons.78f07e2c2a535c26ef21.woff" />
+    <Content Include="control-esports\dist\Simple-Line-Icons.d2285965fe34b0546504.ttf" />
+    <Content Include="control-esports\dist\Simple-Line-Icons.f33df365d6d0255b586f.eot" />
+    <Content Include="control-esports\dist\themify.e23a7dcaefbde4e74e26.ttf" />
+    <Content Include="control-esports\dist\Xperia.7ef76666f590127524e8.ttf" />
+    <Content Include="control-esports\e2e\tsconfig.e2e.json" />
+    <Content Include="control-esports\package-lock.json" />
+    <Content Include="control-esports\package.json" />
+    <Content Include="control-esports\README.md" />
+    <Content Include="control-esports\src\app\admin\achievements\achievements.component.scss" />
+    <Content Include="control-esports\src\app\admin\achievements\create\create.component.scss" />
+    <Content Include="control-esports\src\app\admin\achievements\detail\detail.component.scss" />
+    <Content Include="control-esports\src\app\admin\achievements\edit\edit.component.scss" />
+    <Content Include="control-esports\src\app\admin\admin.component.scss" />
+    <Content Include="control-esports\src\app\admin\blogs\blogs.component.scss" />
+    <Content Include="control-esports\src\app\admin\blogs\create\create.component.scss" />
+    <Content Include="control-esports\src\app\admin\blogs\detail\detail.component.scss" />
+    <Content Include="control-esports\src\app\admin\blogs\edit\edit.component.scss" />
+    <Content Include="control-esports\src\app\admin\dashboard\dashboard.component.scss" />
+    <Content Include="control-esports\src\app\admin\games\create\create.component.scss" />
+    <Content Include="control-esports\src\app\admin\games\detail\detail.component.scss" />
+    <Content Include="control-esports\src\app\admin\games\edit\edit.component.scss" />
+    <Content Include="control-esports\src\app\admin\games\games.component.scss" />
+    <Content Include="control-esports\src\app\admin\matches\matches.component.scss" />
+    <Content Include="control-esports\src\app\admin\players\create\create.component.scss" />
+    <Content Include="control-esports\src\app\admin\players\detail\detail.component.scss" />
+    <Content Include="control-esports\src\app\admin\players\edit\edit.component.scss" />
+    <Content Include="control-esports\src\app\admin\players\players.component.scss" />
+    <Content Include="control-esports\src\app\admin\settings\settings.component.scss" />
+    <Content Include="control-esports\src\app\admin\teams\create\create.component.scss" />
+    <Content Include="control-esports\src\app\admin\teams\detail\detail.component.scss" />
+    <Content Include="control-esports\src\app\admin\teams\edit\edit.component.scss" />
+    <Content Include="control-esports\src\app\admin\teams\teams.component.scss" />
+    <Content Include="control-esports\src\app\admin\tournaments\tournaments.component.scss" />
+    <Content Include="control-esports\src\app\admin\users\create\create.component.scss" />
+    <Content Include="control-esports\src\app\admin\users\detail\detail.component.scss" />
+    <Content Include="control-esports\src\app\admin\users\edit\edit.component.scss" />
+    <Content Include="control-esports\src\app\admin\users\users.component.scss" />
+    <Content Include="control-esports\src\app\app.component.scss" />
+    <Content Include="control-esports\src\app\components\main-footer\main-footer.component.scss" />
+    <Content Include="control-esports\src\app\components\main-navigator\main-navigator.component.scss" />
+    <Content Include="control-esports\src\app\main\account\account.component.scss" />
+    <Content Include="control-esports\src\app\main\account\changepassword\changepassword.component.scss" />
+    <Content Include="control-esports\src\app\main\account\forgotpassword\forgotpassword.component.scss" />
+    <Content Include="control-esports\src\app\main\account\register\register.component.scss" />
+    <Content Include="control-esports\src\app\main\blog\blog-detail\blog-detail.component.scss" />
+    <Content Include="control-esports\src\app\main\blog\blog.component.scss" />
+    <Content Include="control-esports\src\app\main\home\home.component.scss" />
+    <Content Include="control-esports\src\app\main\main.component.scss" />
+    <Content Include="control-esports\src\app\main\matches\matches.component.scss" />
+    <Content Include="control-esports\src\app\main\matches\timeline\timeline.component.scss" />
+    <Content Include="control-esports\src\app\main\teams\team-detail\team-detail.component.scss" />
+    <Content Include="control-esports\src\app\main\teams\teams.component.scss" />
+    <Content Include="control-esports\src\assets\.gitkeep" />
+    <Content Include="control-esports\src\assets\font\themify.eot" />
+    <Content Include="control-esports\src\assets\font\themify.ttf" />
+    <Content Include="control-esports\src\assets\font\themify.woff" />
+    <Content Include="control-esports\src\assets\font\Xperia.ttf" />
+    <Content Include="control-esports\src\assets\images\blogs\icon\Thumbs.db" />
+    <Content Include="control-esports\src\sass\common.scss" />
+    <Content Include="control-esports\src\styles.scss" />
+    <Content Include="control-esports\src\tsconfig.app.json" />
+    <Content Include="control-esports\src\tsconfig.spec.json" />
+    <Content Include="control-esports\tsconfig.json" />
+    <Content Include="control-esports\tslint.json" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="control-esports\node_modules\" />
+    <Folder Include="control-esports\src\app\core\guards\" />
+    <Folder Include="control-esports\src\app\core\services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="control-esports\e2e\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="control-esports\e2e\app.po.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\achievements\achievements.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\achievements\achievements.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\achievements\create\create.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\achievements\create\create.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\achievements\detail\detail.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\achievements\detail\detail.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\achievements\edit\edit.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\achievements\edit\edit.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\admin.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\admin.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\admin.routing.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\blogs\blogs.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\blogs\blogs.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\blogs\create\create.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\blogs\create\create.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\blogs\detail\detail.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\blogs\detail\detail.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\blogs\edit\edit.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\blogs\edit\edit.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\dashboard\dashboard.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\dashboard\dashboard.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\games\create\create.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\games\create\create.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\games\detail\detail.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\games\detail\detail.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\games\edit\edit.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\games\edit\edit.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\games\games.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\games\games.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\matches\matches.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\matches\matches.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\players\create\create.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\players\create\create.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\players\detail\detail.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\players\detail\detail.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\players\edit\edit.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\players\edit\edit.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\players\players.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\players\players.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\settings\settings.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\settings\settings.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\teams\create\create.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\teams\create\create.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\teams\detail\detail.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\teams\detail\detail.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\teams\edit\edit.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\teams\edit\edit.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\teams\teams.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\teams\teams.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\tournaments\tournaments.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\tournaments\tournaments.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\users\create\create.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\users\create\create.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\users\detail\detail.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\users\detail\detail.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\users\edit\edit.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\users\edit\edit.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\users\users.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\admin\users\users.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\app.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\app.module.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\app.routing.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\components\main-footer\main-footer.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\components\main-footer\main-footer.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\components\main-navigator\main-navigator.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\components\main-navigator\main-navigator.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\config\nav.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\core\pipes\safe-html.pipe.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\core\pipes\safe-html.pipe.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\account\account.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\account\account.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\account\changepassword\changepassword.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\account\changepassword\changepassword.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\account\forgotpassword\forgotpassword.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\account\forgotpassword\forgotpassword.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\account\register\register.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\account\register\register.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\blog\blog-detail\blog-detail.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\blog\blog-detail\blog-detail.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\blog\blog.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\blog\blog.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\home\home.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\home\home.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\main.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\main.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\main.routing.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\matches\matches.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\matches\matches.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\matches\timeline\timeline.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\matches\timeline\timeline.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\teams\team-detail\team-detail.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\teams\team-detail\team-detail.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\teams\teams.component.spec.ts" />
+    <TypeScriptCompile Include="control-esports\src\app\main\teams\teams.component.ts" />
+    <TypeScriptCompile Include="control-esports\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="control-esports\src\environments\environment.ts" />
+    <TypeScriptCompile Include="control-esports\src\main.ts" />
+    <TypeScriptCompile Include="control-esports\src\polyfills.ts" />
+    <TypeScriptCompile Include="control-esports\src\test.ts" />
+    <TypeScriptCompile Include="control-esports\src\typings.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ControlESports.Core\ControlESports.Core.csproj">
+      <Project>{463f83be-3f8f-4b25-a0d1-94f2a98672f3}</Project>
+      <Name>ControlESports.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ControlESports.Domain\ControlESports.Domain.csproj">
+      <Project>{88da5b02-7be8-4c8d-b6d1-2af7102ef598}</Project>
+      <Name>ControlESports.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ControlESports.Infrastructure\ControlESports.Infrastructure.csproj">
+      <Project>{00b1b5d9-fb73-488e-9360-9751c13d7cc0}</Project>
+      <Name>ControlESports.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52122</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52122/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

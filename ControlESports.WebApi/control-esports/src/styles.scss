@@ -1,0 +1,26 @@
+@import "node_modules/@coreui/coreui/scss/coreui";
+
+@font-face {
+  font-family: 'Xperia';
+  src: url(assets/font/Xperia.ttf);
+}
+
+@font-face {
+  font-family: 'themify';
+  src: url(assets/font/themify.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import "../node_modules/font-awesome/scss/font-awesome.scss";
+
+.Xperia {
+  font-family: 'Xperia';
+}
+
+
+
+
+
+
